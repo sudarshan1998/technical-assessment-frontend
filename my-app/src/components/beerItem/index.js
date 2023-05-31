@@ -25,10 +25,6 @@ export const BeerItem = (props) => {
 };
 
 export const MyBeersCard = (props) => {
-  const handleDelete = () => {
-    // Delete logic
-  };
-
   return (
     <CCard className="mb-3">
       <CRow className="g-0 parent hoverCard">
@@ -42,7 +38,7 @@ export const MyBeersCard = (props) => {
             <CCardText className='tagline'>Rs {props.price}</CCardText>
             <CCardText>{props.description}</CCardText>
             <div className='deleteAndPrice'>
-              <button onClick={handleDelete}>
+              <button>
                 <DeleteIcon /> Delete
               </button>
             </div>
