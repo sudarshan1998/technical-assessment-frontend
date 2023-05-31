@@ -25,10 +25,6 @@ export const BeerItem = (props) => {
 };
 
 export const MyBeersCard = (props) => {
-  const handleDelete = () => {
-    // Delete logic
-  };
-
   return (
     <CCard className="mb-3">
       <CRow className="g-0 parent hoverCard">
