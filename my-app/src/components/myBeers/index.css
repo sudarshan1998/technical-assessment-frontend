@@ -1,0 +1,12 @@
+.addBeerContainer {
+    background-color: #F0F0F0;
+    text-align: center;
+}
+.containerText {
+    white-space: pre-line;
+}
+
+.AddNewBeer {
+    margin-left: 45%;
+    background-color: blue;
+}

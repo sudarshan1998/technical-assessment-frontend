@@ -1,0 +1,13 @@
+.addNewBeer {
+    float: right
+}
+.beerImage {
+    width: 100px;
+}
+.saveButton {
+    float: right;
+}
+.cancelButton {
+    float: right;
+    margin-right: 10px;
+}
