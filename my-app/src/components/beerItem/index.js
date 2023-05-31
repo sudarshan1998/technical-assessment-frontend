@@ -38,7 +38,7 @@ export const MyBeersCard = (props) => {
             <CCardText className='tagline'>Rs {props.price}</CCardText>
             <CCardText>{props.description}</CCardText>
             <div className='deleteAndPrice'>
-              <button onClick={handleDelete}>
+              <button>
                 <DeleteIcon /> Delete
               </button>
             </div>
