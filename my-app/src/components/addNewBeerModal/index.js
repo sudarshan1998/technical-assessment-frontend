@@ -8,23 +8,28 @@ import image from "../../images/beer.png"
 function AddNewBeer() {
   const [beerInfo, setBeerInfo] = useState({
     name: "", genre: "", description: "", price: "", image_url: "https://images.punkapi.com/v2/2.png"
-  })
+  });
   const [success, setSuccess] = useState(false);
-
+  const [error, setError] = useState(null);
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  let name, value
   const inputHandler = event => {
-    name = event.target.name
-    value = event.target.value
-    setBeerInfo({...beerInfo, [name]: value})
-  }
+    const { name, value } = event.target;
+    setBeerInfo(prevState => ({ ...prevState, [name]: value }));
+  };
 
   const formSubmitHandler = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
+
+    // Check if any required field is empty
+    if (!beerInfo.name || !beerInfo.genre || !beerInfo.description || !beerInfo.price) {
+      setError("Please fill in all required fields.");
+      return;
+    }
+
     try {
       const response = await fetch('https://ocgj9x4mbh.execute-api.ap-southeast-2.amazonaws.com/dev/beer', {
         method: 'POST',
@@ -33,22 +38,24 @@ function AddNewBeer() {
         },
         body: JSON.stringify(beerInfo)
       });
-      console.log(response)
+
       if (response) {
-        setSuccess(true); // Show success alert
-        setBeerInfo({name: "", genre: "", description: "", price: "", image_url: "https://images.punkapi.com/v2/2.png"});
-        window.location.reload(); 
+        setSuccess(true);
+        setBeerInfo({ name: "", genre: "", description: "", price: "", image_url: "https://images.punkapi.com/v2/2.png" });
+        handleClose();
+        window.location.reload();
       } else {
-        alert("The required field cannot be empty");
+        const errorResponse = await response.json();
+        setError(errorResponse.message || "An error occurred.");
       }
     } catch (error) {
-      alert(error)
+      setError("An error occurred.");
     }
-  }
+  };
 
   return (
     <>
-      <Button variant="primary addNewBeer" onClick={handleShow} style={{marginRight:"45%"}}>
+      <Button variant="primary addNewBeer" onClick={handleShow} style={{ marginRight: "45%" }}>
         Add a new beer
       </Button>
       <Modal show={show} onHide={handleClose}>
@@ -56,11 +63,12 @@ function AddNewBeer() {
           <Modal.Title>Add a new beer</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img className="beerImage" src={image}/>
+          <img className="beerImage" src={image} alt="Beer" />
           {success && <div className="success-alert">Data added successfully!</div>}
+          {error && <div className="error-alert" style={{color: "red"}}>{error}</div>}
           <Form onSubmit={formSubmitHandler}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Beer name</Form.Label>
+              <Form.Label>Beer name*</Form.Label>
               <Form.Control
                 onChange={inputHandler}
                 type="text"
@@ -71,7 +79,7 @@ function AddNewBeer() {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label>Genre</Form.Label>
+              <Form.Label>Genre*</Form.Label>
               <Form.Control
                 onChange={inputHandler}
                 type="text"
@@ -80,12 +88,8 @@ function AddNewBeer() {
                 value={beerInfo.genre}
               />
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-            <Form.Group>
-              <Form.Label>Price in Rs</Form.Label>
+            <Form.Group className="mb-3">
+              <Form.Label>Price in Rs*</Form.Label>
               <Form.Control
                 onChange={inputHandler}
                 type="text"
@@ -94,20 +98,17 @@ function AddNewBeer() {
                 value={beerInfo.price}
               />
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            ></Form.Group>
-            <Form.Label>Description*</Form.Label>
-              <Form.Control 
+            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+              <Form.Label>Description*</Form.Label>
+              <Form.Control
                 onChange={inputHandler}
-                as="textarea" 
+                as="textarea"
                 name="description"
                 value={beerInfo.description}
-                rows={3} 
+                rows={3}
               />
             </Form.Group>
-            <Button variant="primary" className='saveButton' type = "submit" onClick={handleClose}>
+            <Button variant="primary" className='saveButton' type="submit">
               Save
             </Button>
             <Button variant="danger" className='cancelButton' onClick={handleClose}>
@@ -120,4 +121,4 @@ function AddNewBeer() {
   );
 }
 
-export default AddNewBeer
+export default AddNewBeer;
