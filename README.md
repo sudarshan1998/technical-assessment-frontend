@@ -55,3 +55,14 @@ Note: Dont forget to ```npm install``` before ```npm start``` to install all the
 
 ![Screenshot from 2023-06-02 14-53-36](https://github.com/sudarshan1998/technical-assessment-frontend/assets/23524244/dcf849fc-0328-4bce-9f1b-6b27ef624939)
 
+![Screenshot from 2023-06-02 14-53-46](https://github.com/sudarshan1998/technical-assessment-frontend/assets/23524244/5078c834-cfe8-4f12-ac3c-9c3e7be8a4a9)
+
+![Screenshot from 2023-06-02 14-54-14](https://github.com/sudarshan1998/technical-assessment-frontend/assets/23524244/b6e218c8-06de-46f3-9d91-8934ac1b4331)
+
+![Screenshot from 2023-06-02 14-54-45](https://github.com/sudarshan1998/technical-assessment-frontend/assets/23524244/9cb3f030-20f6-4091-bbc6-8a2820f871ed)
+
+![Screenshot from 2023-06-02 14-54-58](https://github.com/sudarshan1998/technical-assessment-frontend/assets/23524244/e402df11-9131-4bce-a585-eff3c34db485)
+
+![Screenshot from 2023-06-02 14-57-53](https://github.com/sudarshan1998/technical-assessment-frontend/assets/23524244/06b9b559-0118-4152-b93b-5a0de511e5e1)
+
+![Screenshot from 2023-06-02 14-58-14](https://github.com/sudarshan1998/technical-assessment-frontend/assets/23524244/ea1aab46-cef4-42df-85bb-7ba5f412d9a1)
