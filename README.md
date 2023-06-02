@@ -12,7 +12,7 @@ This API is used to show the random beers.
 
 Note: This is a third party API
 
-### End Users Beer API: 
+### Get Beers API: 
 
 Endpoint: ```https://ocgj9x4mbh.execute-api.ap-southeast-2.amazonaws.com/dev/beers```
 
