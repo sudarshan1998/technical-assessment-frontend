@@ -13,6 +13,16 @@ End Users Beer API: ```https://ocgj9x4mbh.execute-api.ap-southeast-2.amazonaws.c
 This API is used to show the end user added beer.
 
 Add Beer API: ```https://ocgj9x4mbh.execute-api.ap-southeast-2.amazonaws.com/dev/beer```
+```
+Request body:
+{
+    "name": "sample-name7",
+    "image_url": "sample_image",
+    "price": "0.001",
+    "genre": "sample-genre",
+    "description": "sample-description"
+}
+```
 
 This API is used to add the beers data into database
 
