@@ -49,3 +49,9 @@ To setup the react, run the command
 Go inside the ```my-app/src``` and run the the command ```npm start```
 
 Note: Dont forget to ```npm install``` before ```npm start``` to install all the dependencies
+
+
+## Glimpses of the project
+
+![Screenshot from 2023-06-02 14-53-36](https://github.com/sudarshan1998/technical-assessment-frontend/assets/23524244/dcf849fc-0328-4bce-9f1b-6b27ef624939)
+
