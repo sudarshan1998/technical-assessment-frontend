@@ -2,17 +2,26 @@
 
 ## Introduction
 
-We created a simple beer list which should have 2 tabs, one for the beers fetched from the API("All beers") and another for the custom beers added by the user.
+We created a beer list which should have 2 tabs, one for the beers fetched from the API("All beers") and another for the custom beers added by the user.
 
-Random Beer API: ```https://punkapi.com/documentation/v2```
+### Random Beer API: 
+
+Endpoint: ```https://punkapi.com/documentation/v2```
 
 This API is used to show the random beers.
 
-End Users Beer API: ```https://ocgj9x4mbh.execute-api.ap-southeast-2.amazonaws.com/dev/beers```
+Note: This is a third party API
+
+### End Users Beer API: 
+
+Endpoint: ```https://ocgj9x4mbh.execute-api.ap-southeast-2.amazonaws.com/dev/beers```
 
 This API is used to show the end user added beer.
 
-Add Beer API: ```https://ocgj9x4mbh.execute-api.ap-southeast-2.amazonaws.com/dev/beer```
+### Add Beer API: 
+
+Endpoint: ```https://ocgj9x4mbh.execute-api.ap-southeast-2.amazonaws.com/dev/beer```
+
 ```
 Request body:
 {
